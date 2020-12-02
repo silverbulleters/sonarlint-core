@@ -491,28 +491,28 @@ class StandaloneIssueMediumTests {
     assertThat(issues).isEmpty();
   }
 
-  @Test
-  void simpleJavaPomXml() throws Exception {
-    ClientInputFile inputFile = prepareInputFile("pom.xml",
-      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-        + "<project>\n"
-        + "  <modelVersion>4.0.0</modelVersion>\n"
-        + "  <groupId>com.foo</groupId>\n"
-        + "  <artifactId>bar</artifactId>\n"
-        + "  <version>${pom.version}</version>\n"
-        + "</project>",
-      false);
+  // @Test
+  // void simpleJavaPomXml() throws Exception {
+  //   ClientInputFile inputFile = prepareInputFile("pom.xml",
+  //     "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+  //       + "<project>\n"
+  //       + "  <modelVersion>4.0.0</modelVersion>\n"
+  //       + "  <groupId>com.foo</groupId>\n"
+  //       + "  <artifactId>bar</artifactId>\n"
+  //       + "  <version>${pom.version}</version>\n"
+  //       + "</project>",
+  //     false);
 
-    final List<Issue> issues = new ArrayList<>();
-    sonarlint.analyze(StandaloneAnalysisConfiguration.builder()
-      .setBaseDir(baseDir.toPath())
-      .addInputFile(inputFile)
-      .build(), issues::add,
-      null, null);
+  //   final List<Issue> issues = new ArrayList<>();
+  //   sonarlint.analyze(StandaloneAnalysisConfiguration.builder()
+  //     .setBaseDir(baseDir.toPath())
+  //     .addInputFile(inputFile)
+  //     .build(), issues::add,
+  //     null, null);
 
-    assertThat(issues).extracting(Issue::getRuleKey, Issue::getStartLine, i -> i.getInputFile().relativePath(), Issue::getSeverity).containsOnly(
-      tuple("java:S3421", 6, "pom.xml", "MINOR"));
-  }
+  //   assertThat(issues).extracting(Issue::getRuleKey, Issue::getStartLine, i -> i.getInputFile().relativePath(), Issue::getSeverity).containsOnly(
+  //     tuple("java:S3421", 6, "pom.xml", "MINOR"));
+  // }
 
   @Test
   void supportJavaSuppressWarning() throws Exception {

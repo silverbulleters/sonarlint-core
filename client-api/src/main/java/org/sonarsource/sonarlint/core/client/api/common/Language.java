@@ -32,6 +32,7 @@ public enum Language {
 
   ABAP("abap", "abap", "ABAP", new String[] {".abap", ".ab4", ".flow", ".asprog"}, "sonar.abap.file.suffixes"),
   APEX("apex", "sonarapex", "Apex", new String[] {".cls", ".trigger"}, "sonar.apex.file.suffixes"),
+  BSL("bsl", "bsl", "BSL", new String[] {".bsl", ".xml", ".mdo"}, "sonar.bsl.file.suffixes"),
   C("c", "cpp", "C", new String[] {".c", ".h"}, "sonar.c.file.suffixes"),
   CPP("cpp", "cpp", "C++", new String[] {".cc", ".cpp", ".cxx", ".c++", ".hh", ".hpp", ".hxx", ".h++", ".ipp"}, "sonar.cpp.file.suffixes"),
   OBJC("objc", "cpp", "Objective-C", new String[] {".m"}, "sonar.objc.file.suffixes"),
@@ -52,7 +53,7 @@ public enum Language {
   TS("ts", "javascript", "TypeScript", new String[] {".ts", ".tsx"},
     "sonar.typescript.file.suffixes"),
   JSP("jsp", "web", "JSP", new String[] {".jsp", ".jspf", ".jspx"}, "sonar.jsp.file.suffixes"),
-  XML("xml", "xml", "XML", new String[] {".xml", ".xsd", ".xsl"}, "sonar.xml.file.suffixes"),
+  XML("xml", "xml", "XML", new String[] {".xsd", ".xsl"}, "sonar.xml.file.suffixes"),
   // For ITs
   XOO("xoo", "xoo", "Xoo", new String[] {".xoo"}, "sonar.xoo.file.suffixes");
 
